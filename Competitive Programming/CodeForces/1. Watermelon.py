@@ -17,7 +17,7 @@ each of them should get a part of positive weight.
 
 Input
 The first (and the only) input line contains integer number 
-w (1 ≤ w ≤ 100) — the weight of the watermelon 
+w (1 ≤ w ≤ 100) — the weight of the watermelon 
 bought by the boys.
 
 Output
