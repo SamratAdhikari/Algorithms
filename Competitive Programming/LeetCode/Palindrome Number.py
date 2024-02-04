@@ -29,17 +29,15 @@ Constraints:
 Follow up: Could you solve it without converting the integer to a string?
 '''
 
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x<0:
+            return False
 
-def isPalindrome(x):
-    t = 0
-    c = x
-    while x > 0:
-        t = t*10 + x % 10
-        x = x/10
+        t = 0
+        c = x
+        while x>0:
+            t = t*10 + x % 10
+            x = x//10
         
-    if t == c:
-        return True
-    
-    return False
-
-print(isPalindrome(121))
+        return t == c
