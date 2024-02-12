@@ -43,8 +43,6 @@ Constraints:
 nums is sorted in non-decreasing order.
 '''
 
-
-
 class RemoveDuplicates:
     pass
     
