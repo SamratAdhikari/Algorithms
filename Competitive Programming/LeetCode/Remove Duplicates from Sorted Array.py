@@ -48,3 +48,6 @@ nums is sorted in non-decreasing order.
 class RemoveDuplicates:
     pass
     
+
+    def main():
+        pass
