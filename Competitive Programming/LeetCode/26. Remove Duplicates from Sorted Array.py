@@ -49,13 +49,13 @@
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        k = 0
+        j = 0
 
-        for i in 
-        return k
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i-1]:
+                j += 1
+        return j
         
-
-
 
 if __name__ == '__main__':
     obj = Solution()
