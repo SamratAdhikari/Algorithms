@@ -52,9 +52,6 @@ class Solution:
         k = 0
 
         for i in 
-
-
-
         return k
         
 
