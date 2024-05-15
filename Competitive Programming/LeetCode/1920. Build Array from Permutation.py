@@ -29,3 +29,16 @@
 # The elements in nums are distinct.
 
 # Follow-up: Can you solve it without using an extra space (i.e., O(1) memory)?
+
+class Solution:
+    def buildArray(self, nums):
+        temp = []
+
+        for idx, val in enumerate(nums):
+            temp.append(nums[nums[idx]])
+        
+        return temp
+
+if __name__ == '__main__':
+    obj = Solution()
+    print(obj.buildArray([0,2,1,5,3,4]))
