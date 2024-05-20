@@ -48,8 +48,6 @@ class Solution:
     	return sum
         
 
-
-
 if __name__ == '__main__':
 	obj = Solution()
 	print(obj.findPermutationDifference("abcde", "edbac"))
