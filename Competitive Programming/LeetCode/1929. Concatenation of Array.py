@@ -27,7 +27,9 @@
 # 1 <= n <= 1000
 # 1 <= nums[i] <= 1000
 
-class Solution:
+
+
+class Solution: 
     def getConcatenation(self, nums):
     	nums.extend(nums)
     	return nums
