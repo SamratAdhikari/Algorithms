@@ -41,10 +41,6 @@ The first example corresponds to the following sequence: 512→511→510→51→
 .
 '''
 
-
-
-
-
 ask = input().split()
 a = int(ask[0])
 b = int(ask[1])
