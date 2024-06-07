@@ -33,6 +33,8 @@ For the first example. There are 6 distinct characters in "wjmzbmr". These chara
 
 '''
 
+
+
 s = set()
 n = [i for i in str(input())]
 a = 0
