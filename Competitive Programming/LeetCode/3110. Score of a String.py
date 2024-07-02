@@ -34,7 +34,6 @@ class Solution:
         return score
 
 
-
 if __name__ == '__main__':
 	obj = Solution()
 	print(obj.scoreOfString('hello'))
