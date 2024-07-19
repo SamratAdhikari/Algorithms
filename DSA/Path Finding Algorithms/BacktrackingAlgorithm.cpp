@@ -10,13 +10,11 @@ bool isSafe(int **arr, int x, int y, int n){
 }
 
 bool backtrack(int **arr, int x, int y, int n, int ** solnArr){
-	
 	// base condition
 	if (x==n-1 && y==n-1){
 		solnArr[x][y] = 1;
 		return true;
 	}
-
 
 	if (isSafe(arr, x, y, n)){
 		solnArr[x][y] = 1;

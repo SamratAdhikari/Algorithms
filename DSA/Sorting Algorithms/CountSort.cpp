@@ -1,47 +1,58 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
+void countingSort(vector<int>& arr) {
+    int maxElement = *max_element(arr.begin(), arr.end());
+    int minElement = *min_element(arr.begin(), arr.end());
+    int range = maxElement - minElement + 1;
 
-void countSort(int arr[], int n){
-	int k=arr[0];
+    // Create count array and initialize it with zero
+    vector<int> count(range, 0);
 
-	for (int i=0; i<n; i++){
-		k = max(k, arr[i]);
-	}
+    // Store the count of each element
+    for (int i = 0; i < arr.size(); i++) {
+        count[arr[i] - minElement]++;
+    }
 
-	int count[10] = {0};
-	for (int i=0; i<n; i++){
-		count[arr[i]]++;
-	}
+    // Store the cumulative count
+    for (int i = 1; i < count.size(); i++) {
+        count[i] += count[i - 1];
+    }
 
-	for (int i=1; i<=k; i++){
-		count[i] += count[i-1];
-	}
+    // Output array to store sorted elements
+    vector<int> output(arr.size());
 
-	int output[n];
-	for (int i=n-1; i>=0; i--){
-		output[--count[arr[i]]] = arr[i];
-	}
+    // Build the output array
+    for (int i = arr.size() - 1; i >= 0; i--) {
+        output[count[arr[i] - minElement] - 1] = arr[i];
+        count[arr[i] - minElement]--;
+    }
 
-	for (int i=0; i<n; i++){
-		arr[i] = output[i];
-	}
+    // Copy the sorted elements into the original array
+    for (int i = 0; i < arr.size(); i++) {
+        arr[i] = output[i];
+    }
 }
 
+void printVector(const vector<int>& arr) {
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
 
-int main(){
+int main() {
+    vector<int> arr = {4, 2, 2, 8, 3, 3, 1};
 
-	int arr[] = {1, 3, 2, 3, 4, 1, 6, 4, 3};
+    cout << "Original vector: ";
+    printVector(arr);
 
-	countSort(arr, 9);
+    countingSort(arr);
 
-	cout << "The sorted array is ";
-	for (int i=0; i<9; i++){
-		cout << arr[i] << " ";
-	}
+    cout << "Sorted vector in ascending order: ";
+    printVector(arr);
 
-	cout << endl;
-
-	system("pause");
-	return 0;
+    return 0;
 }
